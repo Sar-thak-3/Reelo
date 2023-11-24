@@ -1,0 +1,249 @@
+{
+  "questions": [
+    {
+      "question": "What is the speed of light",
+      "subject": "Physics",
+      "topic": "Waves",
+      "difficulty": "Easy",
+      "marks": 5
+    },
+    {
+      "question": "Explain the law of conservation of energy",
+      "subject": "Physics",
+      "topic": "Energy",
+      "difficulty": "Easy",
+      "marks": 3
+    },
+
+    {
+      "question": "Define osmosis",
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "difficulty": "Medium",
+      "marks": 4
+    },
+
+    {
+      "question": "Solve the quadratic equation: x^2 - 4x + 4 = 0x 2−4x+4=0",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Describe the process of photosynthesis",
+      "subject": "Biology",
+      "topic": "Plant Biology",
+      "difficulty": "Medium",
+      "marks": 4
+    },
+
+    {
+      "question": "What is the concept of supply and demand in economics?",
+      "subject": "Economics",
+      "topic": "Microeconomics",
+      "difficulty": "Easy",
+      "marks": 3
+    },
+    {
+      "question": "Explain the Heisenberg Uncertainty Principle in quantum mechanics",
+      "subject": "Physics",
+      "topic": "Quantum Mechanics",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Describe the structure and function of DNA",
+      "subject": "Biology",
+      "topic": "Genetics",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Prove the Pythagorean Theorem",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "Hard",
+      "marks": 3
+    },
+
+    {
+      "question": "Analyze the impact of the Industrial Revolution on society",
+      "subject": "History",
+      "topic": "Industrial Revolution",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Examine the concept of civil liberties in constitutional law",
+      "subject": "Law",
+      "topic": "Constitutional Law",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Discuss the theory of relativity proposed by Albert Einstein",
+      "subject": "Physics",
+      "topic": "Relativity",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Elaborate on the process of protein synthesis",
+      "subject": "Biology",
+      "topic": "Molecular Biology",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Solve a second-order linear ordinary differential equation",
+      "subject": "Mathematics",
+      "topic": "Differential Equations",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Examine the factors influencing international trade patterns",
+      "subject": "Economics",
+      "topic": "International Trade",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Discuss the ethical implications of artificial intelligence",
+      "subject": "Ethics",
+      "topic": "Artificial Intelligence",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Explain the concept of dark matter in astrophysics",
+      "subject": "Physics",
+      "topic": "Astrophysics",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Analyze the role of neurotransmitters in the nervous system",
+      "subject": "Neuroscience",
+      "topic": "Neurotransmitters",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Solve a third-degree polynomial equation",
+      "subject": "Mathematics",
+      "topic": "Polynomial Equations",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Examine the impact of climate change on biodiversity",
+      "subject": "Environmental Science",
+      "topic": "Climate Change",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Discuss the principles of game theory in economics",
+      "subject": "Economics",
+      "topic": "Game Theory",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Elaborate on the principles of quantum computing",
+      "subject": "Computer Science",
+      "topic": "Quantum Computing",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Analyze the causes and consequences of the French Revolution",
+      "subject": "History",
+      "topic": "French Revolution",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Examine the principles of sustainable development",
+      "subject": "Environmental Science",
+      "topic": "Sustainable Development",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Discuss the mathematical foundations of machine learning algorithms",
+      "subject": "Machine Learning",
+      "topic": "Mathematics",
+      "difficulty": "Hard",
+      "marks": 4
+    },
+
+    {
+      "question": "Explain the concept of time dilation in special relativity",
+      "subject": "Physics",
+      "topic": "Special Relativity",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "State the three laws of motion proposed by Isaac Newton",
+      "subject": "Physics",
+      "topic": "Classical Mechanics",
+      "difficulty": "Medium",
+      "marks": 4
+    },
+
+    {
+      "question": "Explain the process of mitosis",
+      "subject": "Biology",
+      "topic": "Cell Division",
+      "difficulty": "Hard",
+      "marks": 5
+    },
+
+    {
+      "question": "Calculate the area of a circle with a radius of 6 cm",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "Easy",
+      "marks": 3
+    },
+
+    {
+      "question": "Discuss the principles of democracy",
+      "subject": "Political Science",
+      "topic": "Democracy",
+      "difficulty": "Medium",
+      "marks": 4
+    },
+
+    {
+      "question": "What is the concept of inflation in economics?",
+      "subject": "Economics",
+      "topic": "Macroeconomics",
+      "difficulty": "Medium",
+      "marks": 4
+    }
+  ]
+}
