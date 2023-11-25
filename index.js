@@ -182,7 +182,7 @@ function* topicwise_generator(
     yield required_questions;
     return;
   }
-  if(index>=allquestions.length){
+  if (index >= allquestions.length) {
     return;
   }
   required_questions.push(allquestions[index]);
@@ -204,7 +204,7 @@ function* topicwise_generator(
     marks_obj,
     required_questions,
     allquestions,
-    index+1
+    index + 1
   );
   return;
 }
@@ -220,13 +220,13 @@ function paper_generator_topicwise(
   let req_questions = [];
   if (index >= Object.entries(topics_weightage).length) {
     let _questions = allquestions.filter((question) => {
-        return question.difficulty === "Easy";
+      return question.difficulty === "Easy";
     });
     _questions.sort((question1, question2) => {
-        if (question1.marks > question2.marks) {
-            return 1;
-        }
-        return -1;
+      if (question1.marks > question2.marks) {
+        return 1;
+      }
+      return -1;
     });
     let [ret, reqs_questions] = dfs(
       marks_obj["Easy"],
@@ -241,13 +241,13 @@ function paper_generator_topicwise(
     req_questions = req_questions.concat(reqs_questions);
 
     _questions = allquestions.filter((question) => {
-        return question.difficulty === "Medium";
+      return question.difficulty === "Medium";
     });
     _questions.sort((question1, question2) => {
-        if (question1.marks > question2.marks) {
-            return 1;
-        }
-        return -1;
+      if (question1.marks > question2.marks) {
+        return 1;
+      }
+      return -1;
     });
     [ret, reqs_questions] = dfs(
       marks_obj["Medium"],
@@ -262,13 +262,13 @@ function paper_generator_topicwise(
     req_questions = req_questions.concat(reqs_questions);
 
     _questions = allquestions.filter((question) => {
-        return question.difficulty === "Hard";
+      return question.difficulty === "Hard";
     });
     _questions.sort((question1, question2) => {
-        if (question1.marks > question2.marks) {
-            return 1;
-        }
-        return -1;
+      if (question1.marks > question2.marks) {
+        return 1;
+      }
+      return -1;
     });
     [ret, reqs_questions] = dfs(
       marks_obj["Hard"],
@@ -282,12 +282,11 @@ function paper_generator_topicwise(
     total_questions -= reqs_questions.length;
     req_questions = req_questions.concat(reqs_questions);
 
-    if(total_questions !== 0){
-        return [-1, req_questions];
+    if (total_questions !== 0) {
+      return [-1, req_questions];
     }
     return [1, req_questions];
   }
-
 
   let topic_questions = allquestions.filter((question) => {
     return question.topic === Object.entries(topics_weightage)[index][0];
@@ -297,7 +296,6 @@ function paper_generator_topicwise(
     return question.topic !== Object.entries(topics_weightage)[index][0];
   });
 
-
   topic_questions.sort((question1, question2) => {
     if (question1.marks > question2.marks) {
       return 1;
@@ -305,9 +303,19 @@ function paper_generator_topicwise(
     return -1;
   });
 
-  console.log(Math.ceil(total_questions * parseInt(Object.entries(topics_weightage)[index][1].slice(0, -1)) / 100));
+  console.log(
+    Math.ceil(
+      (total_questions *
+        parseInt(Object.entries(topics_weightage)[index][1].slice(0, -1))) /
+        100
+    )
+  );
   let generatorr = topicwise_generator(
-    Math.ceil(total_questions * parseInt(Object.entries(topics_weightage)[index][1].slice(0, -1)) / 100),
+    Math.ceil(
+      (total_questions *
+        parseInt(Object.entries(topics_weightage)[index][1].slice(0, -1))) /
+        100
+    ),
     marks_obj,
     [],
     topic_questions,
@@ -317,7 +325,7 @@ function paper_generator_topicwise(
   while (req_questions !== undefined) {
     let [ret, reqs_questions] = paper_generator_topicwise(
       marks,
-      total_questions-req_questions.length,
+      total_questions - req_questions.length,
       marks_obj,
       topics_weightage,
       allquestions,
@@ -374,44 +382,49 @@ app.get("/generate_paper", async (req, res) => {
       return -1;
     });
 
-    let [ret1, req_easy_questions] = dfs(
+    let required_questions = [];
+
+    let [ret, req_questions] = await dfs(
       easy_marks,
       easy_questions,
       [],
       easy_questions.length
     );
-    if (ret1 === -1) {
+    if (ret === -1) {
       return res.send("Not enough questions in question bank");
     }
-    let [ret2, req_medium_questions] = dfs(
+    required_questions = required_questions.concat(req_questions);
+
+    [ret, req_questions] = await dfs(
       medium_marks,
       medium_questions,
       [],
       medium_questions.length
     );
-    if (ret2 === -1) {
+    if (ret === -1) {
       return res.send("Not enough questions in question bank");
     }
-    let [ret3, req_hard_questions] = dfs(
+    required_questions = required_questions.concat(req_questions);
+
+    [ret, req_questions] = await dfs(
       hard_marks,
       hard_questions,
       [],
       hard_questions.length
     );
-    if (ret3 === -1) {
+    if (ret === -1) {
       return res.send("Not enough questions in question bank");
     }
+    required_questions = required_questions.concat(req_questions);
 
-    return res.send(
-      [].concat(req_easy_questions, req_medium_questions, req_hard_questions)
-    );
+    return res.send(required_questions);
   } catch (err) {
     console.log(err);
     return res.send("Error");
   }
 });
 
-app.get("/get_questions_topicwise", (req, res) => {
+app.get("/get_questions_topicwise", async (req, res) => {
   try {
     const { marks, difficulty, weightage } = req.body;
     const easy_marks =
@@ -426,13 +439,15 @@ app.get("/get_questions_topicwise", (req, res) => {
       Medium: medium_marks,
       Hard: hard_marks,
     };
-    let [ret, req_questions] = topicwise_dfs(
+
+    let [ret, req_questions] = await topicwise_dfs(
       marks,
       marks_obj,
       weightage,
       questions["questions"],
       []
     );
+
     if (ret === -1) {
       return res.send("Not enough question in bank");
     }
@@ -443,7 +458,7 @@ app.get("/get_questions_topicwise", (req, res) => {
   }
 });
 
-app.get("/paper_generator_topicwise", (req, res) => {
+app.get("/paper_generator_topicwise", async (req, res) => {
   try {
     const { marks, difficulty, weightage, total_questions } = req.body;
     const easy_marks =
@@ -459,7 +474,7 @@ app.get("/paper_generator_topicwise", (req, res) => {
       Hard: hard_marks,
     };
 
-    let [ret, req_questions] = paper_generator_topicwise(
+    let [ret, req_questions] = await paper_generator_topicwise(
       marks,
       total_questions,
       marks_obj,
