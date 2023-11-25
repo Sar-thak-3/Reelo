@@ -47,9 +47,23 @@ Endpoint: `/generate_paper`
   }
   ```
 - Example:
-  ```bash
-  curl -X POST -H "Content-Type: application/json" -d '{"total_marks": 50,"difficulty": {"Easy": "28%","Medium": "40%","Hard": "32%"}}' http://localhost:3000/generate_paper
-  ```
+   ## Steps to Use Postman
+
+1. Open Postman on your machine.
+
+2. Set the request type GET .
+
+3. Enter the API endpoint URL: `https://127.0.0.1:3000/generate_paper`
+
+4. Set the request headers:
+  - Content-Type: application/json
+
+5. Set the request body:
+   - For POST requests, select the "Body" tab, choose "raw," and paste the JSON body given above.
+
+6. Click the "Send" button to make the API call.
+
+7. View the response in the "Body" section of the Postman interface.
 
 ## `dfs` Function
 
@@ -111,9 +125,23 @@ Endpoint: `/get_questions_topicwise`
   }
   ```
 - Example:
-  ```bash
-  curl -X POST -H "Content-Type: application/json" -d '{"total_marks": 50,"difficulty": {"Easy": "28%","Medium": "40%","Hard": "32%"},"weightage": {"Democracy": "8%"}}' http://localhost:3000/get_questions_topicwise
-  ```
+    ## Steps to Use Postman
+
+1. Open Postman on your machine.
+
+2. Set the request type GET .
+
+3. Enter the API endpoint URL: `https://127.0.0.1:3000/get_questions_topicwise`
+
+4. Set the request headers:
+  - Content-Type: application/json
+
+5. Set the request body:
+   - For POST requests, select the "Body" tab, choose "raw," and paste the JSON body given above.
+
+6. Click the "Send" button to make the API call.
+
+7. View the response in the "Body" section of the Postman interface.
 
 ## `topicwise_dfs` Function
 
@@ -183,9 +211,23 @@ Endpoint: `/paper_generator_topicwise`
   }
   ```
 - Example:
-  ```bash
-  curl -X POST -H "Content-Type: application/json" -d '{"total_marks": 50,"difficulty": {"Easy": "28%","Medium": "40%","Hard": "32%"},"total_questions": 13,"weightage":{"Democracy": "7.69%"}}' http://localhost:3000/paper_generator_topicwise
-  ```
+  ## Steps to Use Postman
+
+1. Open Postman on your machine.
+
+2. Set the request type GET .
+
+3. Enter the API endpoint URL: `https://127.0.0.1:3000/paper_generator_topicwise`
+
+4. Set the request headers:
+  - Content-Type: application/json
+
+5. Set the request body:
+   - For POST requests, select the "Body" tab, choose "raw," and paste the JSON body given above.
+
+6. Click the "Send" button to make the API call.
+
+7. View the response in the "Body" section of the Postman interface.
 
 ## `paper_generator_topicwise` Function
 
